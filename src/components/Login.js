@@ -59,15 +59,7 @@ class Login extends Component {
   render() {
     const { email, name, disabled } = this.state;
     return (
-      <div>
-        <Input
-          id="email"
-          test="input-gravatar-email"
-          label="Email do Gravatar"
-          value={ email }
-          type="email"
-          changeValue={ this.changeValue }
-        />
+      <div className="user-box">
         <Input
           id="name"
           test="input-player-name"
@@ -76,17 +68,29 @@ class Login extends Component {
           type="text"
           changeValue={ this.changeValue }
         />
-        <Button
-          text="Play"
-          test="btn-play"
-          disabled={ disabled }
-          onClick={ this.submitLogin }
+        <Input
+          id="email"
+          test="input-gravatar-email"
+          label="Email do Gravatar"
+          value={ email }
+          type="email"
+          changeValue={ this.changeValue }
         />
-        <Button
-          text="Settings"
-          test="btn-settings"
-          onClick={ this.submitSettings }
-        />
+        <div>
+          <Button
+            text="Play"
+            test="btn-play"
+            className="btn-play"
+            disabled={ disabled }
+            onClick={ this.submitLogin }
+          />
+          <Button
+            text="Settings"
+            test="btn-settings"
+            className="btn-settings"
+            onClick={ this.submitSettings }
+          />
+        </div>
       </div>
     );
   }

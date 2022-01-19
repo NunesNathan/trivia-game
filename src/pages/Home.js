@@ -2,6 +2,7 @@ import React from 'react';
 import PropType from 'prop-types';
 import Logo from '../components/Logo';
 import Login from '../components/Login';
+import '../styles/Home.css';
 
 export default function Home({ history }) {
   return (
