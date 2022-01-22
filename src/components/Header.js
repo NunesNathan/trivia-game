@@ -11,15 +11,14 @@ class Header extends Component {
         <img
           src={ getGravatarUrl(email) }
           alt={ name }
-          data-testid="header-profile-picture"
         />
-        <p data-testid="header-player-name">
+        <p>
           { name }
         </p>
         <span>
           {'Pontos: '}
         </span>
-        <span data-testid="header-score">
+        <span>
           { score }
         </span>
       </header>

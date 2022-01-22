@@ -10,8 +10,8 @@ class FeedbackMessage extends Component {
     return (
       <div>
         {assertions < PARAM_ASSERTIONS
-          ? <h1 data-testid="feedback-text">Could be better...</h1>
-          : <h1 data-testid="feedback-text">Well Done!</h1>}
+          ? <h1>Could be better...</h1>
+          : <h1>Well Done!</h1>}
       </div>
     );
   }
