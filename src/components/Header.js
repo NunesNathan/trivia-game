@@ -16,10 +16,7 @@ class Header extends Component {
           { name }
         </p>
         <span>
-          {'Pontos: '}
-        </span>
-        <span>
-          { score }
+          {`Pontos: ${score}`}
         </span>
       </header>
     );

@@ -46,7 +46,7 @@ export function overrideTime(time = inicialTime) {
 
 export function countDown(disabledButtons) {
   const timer = getTimer();
-  if (timer.innerHTML > 0) {
+  if (timer.innerHTML >= 1) {
     overrideTime(1);
   } else {
     disabledButtons();
