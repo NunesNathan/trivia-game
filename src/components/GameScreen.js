@@ -7,7 +7,7 @@ import { decodeCharacter, overrideTime,
   shuffleOptions, timerSeconds } from '../services/events';
 import { setNewRanking } from '../services/localStorage';
 import getGravatarUrl from '../services/gravatar';
-import calculatePoints from '../helpers/score';
+import { calculatePoints, progressBar } from '../helpers/score';
 import Button from './Button';
 
 class GameScreen extends Component {
@@ -31,8 +31,9 @@ class GameScreen extends Component {
   }
 
   componentWillUnmount() {
-    const { id } = this.state;
+    const { id, progressBarId } = this.state;
     clearInterval(id);
+    clearInterval(progressBarId);
   }
 
   getQuestions = async () => {
@@ -42,6 +43,7 @@ class GameScreen extends Component {
       this.setState({
         questions: questions.results,
         id: timerSeconds(this.disabledButtons),
+        progressBarId: progressBar(),
       }, () => this.renderQuestion());
     } else {
       dispatch(await fetchAPIToken());
@@ -58,9 +60,10 @@ class GameScreen extends Component {
   }
 
   answerClicked = (boll) => {
-    const { id } = this.state;
+    const { id, progressBarId } = this.state;
     const { dispatch, score } = this.props;
     clearInterval(id);
+    clearInterval(progressBarId);
     this.setState({
       haveAnswer: true,
       correctStyle: '3px solid rgb(6, 240, 15)',
@@ -78,7 +81,7 @@ class GameScreen extends Component {
   }
 
   disabledButtons = () => {
-    const { id } = this.state;
+    const { id, progressBarId } = this.state;
     this.setState({
       disabledButton: true,
       haveAnswer: true,
@@ -86,6 +89,7 @@ class GameScreen extends Component {
       incorrectStyle: '3px solid rgb(255, 0, 0)',
     });
     clearInterval(id);
+    clearInterval(progressBarId);
   }
 
   renderOptions = ({ correct_answer: correct, incorrect_answers: incorrect }) => {
@@ -111,13 +115,15 @@ class GameScreen extends Component {
   };
 
   nextQuestion = () => {
-    const { questionIndex, questions, id } = this.state;
+    const { questionIndex, questions, id, progressBarId } = this.state;
     const { history, score, name, email } = this.props;
     clearInterval(id);
+    clearInterval(progressBarId);
     if (questionIndex < (questions.length - 1)) {
       overrideTime();
       this.setState({
         id: timerSeconds(this.disabledButtons),
+        progressBarId: progressBar(),
         questionIndex: questionIndex + 1,
         haveAnswer: false,
         correctStyle: '',

@@ -1,0 +1,9 @@
+div.progress {
+  width: 600px;
+  max-width: 90%;
+  height: 4.5vh;
+}
+
+.progress-bar-striped {
+  background-color: #ff3600;
+}
