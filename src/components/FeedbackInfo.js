@@ -9,14 +9,14 @@ class FeedbackInfo extends Component {
       <div>
         <p>
           You got
-          <span data-testid="feedback-total-question">
+          <span>
             { assertions }
           </span>
           questions right!
         </p>
         <p>
           Totaling
-          <span data-testid="feedback-total-score">{ score }</span>
+          <span>{ score }</span>
           points
         </p>
       </div>

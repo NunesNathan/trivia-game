@@ -91,10 +91,9 @@ class GameScreen extends Component {
   renderOptions = ({ correct_answer: correct, incorrect_answers: incorrect }) => {
     const { correctStyle, incorrectStyle, disabledButton } = this.state;
     return (
-      <div id="options" data-testid="answer-options">
+      <div id="options">
         <Button
           text={ decodeCharacter(correct) }
-          test="correct-answer"
           style={ { border: correctStyle } }
           disabled={ disabledButton }
           onClick={ () => this.answerClicked(true) }
@@ -103,7 +102,6 @@ class GameScreen extends Component {
           <Button
             key={ decodeCharacter(each) }
             text={ decodeCharacter(each) }
-            test={ `wrong-answer-${i}` }
             style={ { border: incorrectStyle } }
             disabled={ disabledButton }
             onClick={ () => this.answerClicked(false) }
@@ -141,10 +139,8 @@ class GameScreen extends Component {
           ? (<p>Carregando</p>)
           : (
             <div>
-              <p data-testid="question-category">{ actualQuestion.category }</p>
-              <p
-                data-testid="question-text"
-              >
+              <p>{ actualQuestion.category }</p>
+              <p>
                 { decodeCharacter(actualQuestion.question) }
               </p>
               { this.renderOptions(actualQuestion) }
@@ -153,7 +149,6 @@ class GameScreen extends Component {
           && (
             <Button
               text="Next"
-              test="btn-next"
               onClick={ this.nextQuestion }
             />
           )}

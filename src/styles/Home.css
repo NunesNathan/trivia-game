@@ -1,17 +1,7 @@
-* {
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-}
-
-body {
-  text-align: center;
-  background: linear-gradient(#141e30, #243b55);
-  height: 100vh;
-}
-
 .App-logo {
-  height: 40vmin;
+  height: 32vh;
+  width: 47vw;
+  max-width: 800px;
   pointer-events: none;
   margin-bottom: 6vh;
 }
@@ -27,7 +17,8 @@ body {
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.363);
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.5);
-  width: 500px;
+  width: 40vw;
+  max-width: 768px;
 }
 
 .user-box {
@@ -69,30 +60,4 @@ input:-webkit-autofill:active {
   left: 0;
   color: #03e9f4;
   font-size: 12px;
-}
-
-.btn-play, .btn-settings {
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: transparent;
-  color: #51FF00;
-  font-size: 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: .65s;
-  margin-top: 40px;
-  letter-spacing: 4px;
-  border: none;
-  margin: 1.2vh 1vw 0;
-}
-
-.btn-play:hover, .btn-settings:hover {
-  background: #CDEF77;
-  color: rgb(76, 173, 32);
-  border-radius: 5px;
-  box-shadow: 0 0 5px #CDEF77,
-              0 0 25px #CDEF77,
-              0 0 50px #CDEF77;
 }

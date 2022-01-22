@@ -7,17 +7,16 @@ export default class Ranking extends Component {
   render() {
     const { history } = this.props;
     return (
-      <div>
-        <h1 data-testid="ranking-title">Ranking</h1>
+      <main>
+        <h1 className="title">Ranking</h1>
         <RankingList />
         <Button
           text="Play Again"
-          className="btn-play-again"
-          test="btn-go-home"
+          className="btn-play-again col-md-4 col-12 col-lg-3"
           onClick={ () => history.push('/') }
           disabled={ false }
         />
-      </div>
+      </main>
     );
   }
 }

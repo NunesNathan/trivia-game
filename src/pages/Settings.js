@@ -4,7 +4,7 @@ export default class Settings extends Component {
   render() {
     return (
       <div>
-        <h2 data-testid="settings-title">Configurações do Jogo</h2>
+        <h1 className="title">Configurações do Jogo</h1>
       </div>
     );
   }

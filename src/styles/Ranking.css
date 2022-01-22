@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+.title {
+  color: #CDEF77;
+  margin: 3vh auto 10vh;
+  font-size: 4rem;
+}
+
 .profile-area {
   padding: 80px 0;
 }
@@ -13,16 +19,16 @@
   background-color: rgba(0, 0, 0, 0.5);
   overflow: hidden;
   border-radius: 15px;
+  min-width: 21vw;
 }
 
-.img1 img {
-  height: 200px;
+.img1 {
+  margin-top: 4vh;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
-  width: 100%;
 }
 
-.img2 img {
+.img2 {
   position: relative;
   display: block;
   margin-left: auto;
@@ -35,7 +41,7 @@
   margin-top: 10px;
 }
 
-.card:hover .img2 img {
+.card:hover .img2 {
   border-color: #CDEF77;
   transition: .7s;
 }
@@ -60,27 +66,5 @@
 }
 
 .btn-play-again {
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: transparent;
-  color: #51FF00;
-  font-size: 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: .65s;
-  margin-top: 40px;
-  letter-spacing: 4px;
-  border: none;
-  margin: 0vh 1vw 0;
-}
-
-.btn-play-again:hover {
-  background: #CDEF77;
-  color: rgb(76, 173, 32);
-  border-radius: 5px;
-  box-shadow: 0 0 5px #CDEF77,
-              0 0 25px #CDEF77,
-              0 0 50px #CDEF77;
+  margin-bottom: 15vh !important;
 }

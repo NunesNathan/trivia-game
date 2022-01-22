@@ -79,14 +79,12 @@ class Login extends Component {
         <div>
           <Button
             text="Play"
-            test="btn-play"
             className="btn-play"
             disabled={ disabled }
             onClick={ this.submitLogin }
           />
           <Button
             text="Settings"
-            test="btn-settings"
             className="btn-settings"
             onClick={ this.submitSettings }
           />
