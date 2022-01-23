@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropType from 'prop-types';
 import GameScreen from '../components/GameScreen';
 import Header from '../components/Header';
-import Timer from '../components/Timer';
 import '../styles/Game.css'
 
 class Game extends Component {
@@ -12,7 +11,6 @@ class Game extends Component {
       <>
         <Header />
         <GameScreen history={ history } />
-        <Timer />
       </>
     );
   }

@@ -1,4 +1,52 @@
+header.card {
+  width: 50%;
+  margin: 3vh auto 0;
+}
+
+header.card img {
+  width: 8vw;
+  margin: 2vh;
+  border: 7px solid white;
+}
+
+header.card:hover img {
+  border-color: #CDEF77;
+  transition: .7s;
+}
+
+.userName {
+  font-size: 1.35rem;
+}
+
+main.card {
+  width: 50%;
+  margin: 3vh auto 0;
+}
+
+p.lead {
+  margin-bottom: 6vh;
+  font-size: 1.7rem;
+}
+
+div#options {
+  width: 100%;
+  margin: 0 auto;
+}
+
+div#options > button {
+  flex: 0 40%;
+}
+
+div#options button {
+  margin: 0 0 3vh;
+  height: 6vh;
+  border: 1px solid white;
+  padding: 0;
+  color: black;
+}
+
 div.progress {
+  margin-top: 2vh;
   width: 600px;
   max-width: 90%;
   height: 4.5vh;
