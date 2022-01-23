@@ -23,7 +23,7 @@ export default class RankingList extends Component {
                   <img className="img2" src={ picture } alt={`Card de ${name} com ${score} pontos` } />
                     <div className="main-text">
                       <h2>{ name }</h2>
-                      <p>{`${score} pontos`}</p>
+                      <p>{`${score} points`}</p>
                     </div>
                   </div>
               ))

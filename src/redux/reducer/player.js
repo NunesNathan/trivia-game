@@ -1,7 +1,7 @@
 import { ADD_USER, MAKE_SCORE, PLAY_AGAIN } from '../actions';
 
 const initialState = {
-  name: 'Sandrinho',
+  name: '',
   assertions: 0,
   score: 0,
   gravatarEmail: '',

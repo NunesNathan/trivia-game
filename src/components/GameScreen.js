@@ -3,8 +3,10 @@ import PropType from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchAPIToken, makeScore } from '../redux/actions';
 import { fetchQuestions } from '../services/tokenAPI';
-import { decodeCharacter, overrideTime,
-  shuffleOptions, timerSeconds } from '../services/events';
+import {
+  decodeCharacter, overrideTime,
+  shuffleOptions, timerSeconds
+} from '../services/events';
 import { setNewRanking } from '../services/localStorage';
 import getGravatarUrl from '../services/gravatar';
 import { calculatePoints, progressBar } from '../helpers/score';
@@ -99,14 +101,14 @@ class GameScreen extends Component {
       <div className="d-flex flex-wrap justify-content-evenly" id="options">
         <Button
           text={ decodeCharacter(correct) }
-          style={{ border: correctStyle }}
+          style={ { border: correctStyle } }
           disabled={ disabledButton }
           onClick={ () => this.answerClicked(true) }
         />
         { incorrect.map((each, i) => (
           <Button
             key={ decodeCharacter(each) }
-            text={decodeCharacter(each)}
+            text={ decodeCharacter(each) }
             style={ { border: incorrectStyle } }
             disabled={ disabledButton }
             onClick={ () => this.answerClicked(false) }
@@ -151,15 +153,15 @@ class GameScreen extends Component {
                 { decodeCharacter(actualQuestion.question) }
               </p>
               { this.renderOptions(actualQuestion) }
-            </div>)}
-        {haveAnswer
+            </div>) }
+        { haveAnswer
           && (
             <Button
-            text="Next"
-            className="btn"
+              text="Next"
+              className="btn-next"
               onClick={ this.nextQuestion }
             />
-          )}
+          ) }
         <Timer />
       </main>
     );

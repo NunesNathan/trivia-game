@@ -1,0 +1,23 @@
+.card {
+  width: 50%;
+  margin: 5vh auto 0;
+  background-color: rgba(0, 0, 0, 0.5)
+}
+
+.text-message {
+  margin-top: 2vh;
+  margin-bottom: 1vh;
+}
+
+.text-message h1 {
+  color:#CDEF77
+}
+
+.text-info {
+  font-size: 1.3rem;
+}
+
+.text-info p {
+  color: #E9EFCA;
+}
+

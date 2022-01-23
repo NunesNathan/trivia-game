@@ -4,6 +4,7 @@ import Button from '../components/Button';
 import FeedbackInfo from '../components/FeedbackInfo';
 import FeedbackMessage from '../components/FeedbackMessage';
 import Header from '../components/Header';
+import '../styles/Feedback.css'
 
 export default class Feedback extends Component {
   playAgain = () => {
@@ -18,21 +19,25 @@ export default class Feedback extends Component {
 
   render() {
     return (
-      <>
+      <div>
         <Header />
-        <FeedbackMessage />
-        <FeedbackInfo />
-        <Button
-          text="Play Again"
-          onClick={ this.playAgain }
-          disabled={ false }
-        />
-        <Button
-          text="Ranking"
-          onClick={ this.ranking }
-          disabled={ false }
-        />
-      </>
+        <div className="card">
+          <FeedbackMessage />
+          <FeedbackInfo />
+          <Button
+            text="Play Again"
+            className="btn-play-again"
+            onClick={ this.playAgain }
+            disabled={ false }
+          />
+          <Button
+            text="Ranking"
+            className="btn-ranking"
+            onClick={ this.ranking }
+            disabled={ false }
+          />
+        </div>
+      </div>
     );
   }
 }

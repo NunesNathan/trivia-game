@@ -19,7 +19,7 @@ class Header extends Component {
           </p>
         </div>
         <span className="display-6 align-self-center mx-5">
-          {`Pontos: ${score}`}
+          {`Points: ${score}`}
         </span>
       </header>
     );
