@@ -9,6 +9,7 @@ import { setNewRanking } from '../services/localStorage';
 import getGravatarUrl from '../services/gravatar';
 import { calculatePoints, progressBar } from '../helpers/score';
 import Button from './Button';
+import Timer from './Timer';
 
 class GameScreen extends Component {
   constructor() {
@@ -95,17 +96,17 @@ class GameScreen extends Component {
   renderOptions = ({ correct_answer: correct, incorrect_answers: incorrect }) => {
     const { correctStyle, incorrectStyle, disabledButton } = this.state;
     return (
-      <div id="options">
+      <div className="d-flex flex-wrap justify-content-evenly" id="options">
         <Button
           text={ decodeCharacter(correct) }
-          style={ { border: correctStyle } }
+          style={{ border: correctStyle }}
           disabled={ disabledButton }
           onClick={ () => this.answerClicked(true) }
         />
         { incorrect.map((each, i) => (
           <Button
             key={ decodeCharacter(each) }
-            text={ decodeCharacter(each) }
+            text={decodeCharacter(each)}
             style={ { border: incorrectStyle } }
             disabled={ disabledButton }
             onClick={ () => this.answerClicked(false) }
@@ -140,13 +141,13 @@ class GameScreen extends Component {
   render() {
     const { actualQuestion, haveOptions, haveAnswer } = this.state;
     return (
-      <main>
+      <main className="card">
         { !haveOptions
           ? (<p>Carregando</p>)
           : (
-            <div>
-              <p>{ actualQuestion.category }</p>
-              <p>
+            <div className="d-flex flex-column">
+              <p className="my-2">{ actualQuestion.category }</p>
+              <p className="lead">
                 { decodeCharacter(actualQuestion.question) }
               </p>
               { this.renderOptions(actualQuestion) }
@@ -154,10 +155,12 @@ class GameScreen extends Component {
         {haveAnswer
           && (
             <Button
-              text="Next"
+            text="Next"
+            className="btn"
               onClick={ this.nextQuestion }
             />
           )}
+        <Timer />
       </main>
     );
   }

@@ -7,15 +7,18 @@ class Header extends Component {
   render() {
     const { email, name, score } = this.props;
     return (
-      <header>
-        <img
-          src={ getGravatarUrl(email) }
-          alt={ name }
-        />
-        <p>
-          { name }
-        </p>
-        <span>
+      <header className="card flex-row justify-content-center">
+        <div className="d-flex flex-column mx-5">
+          <img
+            className="rounded-circle"
+            src={getGravatarUrl(email)}
+            alt={name}
+          />
+          <p className="userName">
+            {name}
+          </p>
+        </div>
+        <span className="display-6 align-self-center mx-5">
           {`Pontos: ${score}`}
         </span>
       </header>
