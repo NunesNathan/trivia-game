@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import sound from '../assets/show.mp3';
 import PropType from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchAPIToken, makeScore } from '../redux/actions';
@@ -32,9 +31,7 @@ class GameScreen extends Component {
   }
 
   componentDidMount() {
-    const audio = new Audio(sound);
     this.getQuestions();
-    audio.play();
   }
 
   componentWillUnmount() {
