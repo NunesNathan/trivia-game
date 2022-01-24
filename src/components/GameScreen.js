@@ -26,6 +26,7 @@ class GameScreen extends Component {
       disabledButton: false,
       correctStyle: '',
       incorrectStyle: '',
+      withHover: 'withHover',
     };
   }
 
@@ -69,8 +70,9 @@ class GameScreen extends Component {
     clearInterval(progressBarId);
     this.setState({
       haveAnswer: true,
-      correctStyle: '3px solid rgb(6, 240, 15)',
-      incorrectStyle: '3px solid rgb(255, 0, 0)',
+      correctStyle: '2px solid #51FF00',
+      incorrectStyle: '2px solid #FF5400',
+      withHover: 'withoutHover',
     });
 
     if (boll === true) {
@@ -78,7 +80,6 @@ class GameScreen extends Component {
       const time = 30;
       const points = calculatePoints(difficulty, time);
       const newScore = score + points;
-
       dispatch(makeScore(newScore));
     }
   }
@@ -88,32 +89,35 @@ class GameScreen extends Component {
     this.setState({
       disabledButton: true,
       haveAnswer: true,
-      correctStyle: '3px solid rgb(6, 240, 15)',
-      incorrectStyle: '3px solid rgb(255, 0, 0)',
+      correctStyle: '2px solid #51FF00',
+      incorrectStyle: '2px solid #FF5400',
+      withHover: 'withoutHover',
     });
     clearInterval(id);
     clearInterval(progressBarId);
   }
 
   renderOptions = ({ correct_answer: correct, incorrect_answers: incorrect }) => {
-    const { correctStyle, incorrectStyle, disabledButton } = this.state;
+    const { correctStyle, incorrectStyle, disabledButton, withHover } = this.state;
     return (
       <div className="d-flex flex-wrap justify-content-evenly" id="options">
         <Button
-          text={ decodeCharacter(correct) }
-          style={ { border: correctStyle } }
-          disabled={ disabledButton }
-          onClick={ () => this.answerClicked(true) }
+          text={decodeCharacter(correct)}
+          style={{ border: correctStyle }}
+          className={withHover}
+          disabled={disabledButton}
+          onClick={() => this.answerClicked(true)}
         />
-        { incorrect.map((each, i) => (
+        {incorrect.map((each, i) => (
           <Button
-            key={ decodeCharacter(each) }
-            text={ decodeCharacter(each) }
-            style={ { border: incorrectStyle } }
-            disabled={ disabledButton }
-            onClick={ () => this.answerClicked(false) }
+            key={decodeCharacter(each)}
+            text={decodeCharacter(each)}
+            style={{ border: incorrectStyle }}
+            className={withHover}
+            disabled={disabledButton}
+            onClick={() => this.answerClicked(false)}
           />
-        )) }
+        ))}
       </div>);
   };
 
@@ -132,6 +136,7 @@ class GameScreen extends Component {
         correctStyle: '',
         incorrectStyle: '',
         disabledButton: false,
+        withHover: 'withHover',
       }, () => this.renderQuestion());
     } else {
       const record = { name, score, picture: getGravatarUrl(email) };
@@ -144,25 +149,26 @@ class GameScreen extends Component {
     const { actualQuestion, haveOptions, haveAnswer } = this.state;
     return (
       <main className="card">
-        { !haveOptions
-          ? (<p>Carregando</p>)
+        {!haveOptions
+          ? (<p className="display-6" >Carregando...</p>)
           : (
             <div className="d-flex flex-column">
-              <p className="my-2">{ actualQuestion.category }</p>
+              <p className="category">{actualQuestion.category}</p>
               <p className="lead">
-                { decodeCharacter(actualQuestion.question) }
+                {decodeCharacter(actualQuestion.question)}
               </p>
-              { this.renderOptions(actualQuestion) }
-            </div>) }
-        { haveAnswer
-          && (
-            <Button
-              text="Next"
-              className="btn-next"
-              onClick={ this.nextQuestion }
-            />
-          ) }
-        <Timer />
+              {this.renderOptions(actualQuestion)}
+              {haveAnswer
+                && (
+                  <Button
+                    text="Next"
+                    className="btn-next"
+                    onClick={this.nextQuestion}
+                  />
+                )}
+              <Timer />
+            </div>
+          )}
       </main>
     );
   }

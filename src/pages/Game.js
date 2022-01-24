@@ -9,7 +9,7 @@ class Game extends Component {
     const { history } = this.props;
     return (
       <>
-        <Header />
+        <Header place="game"/>
         <GameScreen history={ history } />
       </>
     );

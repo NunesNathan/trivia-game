@@ -5,10 +5,26 @@ import getGravatarUrl from '../services/gravatar';
 
 class Header extends Component {
   render() {
-    const { email, name, score } = this.props;
-    return (
-      <header className="card flex-row justify-content-center">
-        <div className="d-flex flex-column mx-5">
+    const { email, name, score, place } = this.props;
+    const result = place === "game"
+      ? (
+        <header className="card flex-row justify-content-around">
+          <div className="d-flex flex-column mx-5">
+            <img
+              className="rounded-circle"
+              src={getGravatarUrl(email)}
+              alt={name}
+            />
+            <p className="userName">
+              {name}
+            </p>
+          </div>
+          <span className="display-5 align-self-center points">
+            {`Score: ${score}`}
+          </span>
+        </header >
+      ) : (
+        <header className="card flex-row justify-content-evenly">
           <img
             className="rounded-circle"
             src={getGravatarUrl(email)}
@@ -17,12 +33,9 @@ class Header extends Component {
           <p className="userName">
             {name}
           </p>
-        </div>
-        <span className="display-6 align-self-center mx-5">
-          {`Points: ${score}`}
-        </span>
-      </header>
-    );
+        </header>
+      )
+    return result;
   }
 }
 

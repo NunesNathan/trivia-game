@@ -9,14 +9,19 @@ header.card img {
   border: 5px solid white;
 }
 
-header.card:hover img {
+header.card:hover :is(img, .userName, span.points) {
   border-color: #CDEF77;
+  color: #CDEF77;
   transition: .7s;
 }
 
-.userName {
+header.card div p.userName {
   font-size: 1.35rem;
-  color: #E9EFCA;;
+  color: white;
+}
+
+span.points {
+  margin-right: 5vw;
 }
 
 main.card {
@@ -25,8 +30,17 @@ main.card {
   background-color: rgba(0, 0, 0, 0.5)
 }
 
+main.card .display-6 {
+  margin-top: 2vh;
+}
+
+p.category {
+  margin: 3vh auto 2vh;
+  color: #CDEF77;
+}
+
 p.lead {
-  margin-bottom: 6vh;
+  margin-bottom: 5vh;
   font-size: 1.7rem;
 }
 
@@ -36,7 +50,7 @@ div#options {
 }
 
 div#options > button {
-  flex: 0 40%;
+  flex: 0 45%;
 }
 
 div#options button {
@@ -52,21 +66,39 @@ div#options button {
   -webkit-transition: all 0.5s ease-in-out;
 }
 
-div#options button:hover {
+.withHover:hover {
   color: white;
-  box-shadow: inset 0 0 35px rgb(6, 240, 15),
-        0 0 5px 0 rgb(6, 240, 15),
-        0 0 25px 0 rgb(6, 240, 15),
-        0 0 50px 0 rgb(6, 240, 15);
+  box-shadow: inset 0 0 35px #06f00f,
+        0 0 5px 0 #06f00f,
+        0 0 25px 0 #06f00f,
+        0 0 50px 0 #06f00f;
+}
+
+.withoutHover {
+  pointer-events: none;
+}
+
+button.btn-next {
+  width: 15%;
+  align-self: center;
+  margin-bottom: 1.9vh;
 }
 
 div.progress {
   margin-top: 2vh;
-  width: 600px;
+  width: 400px;
   max-width: 90%;
-  height: 4.5vh;
+  height: 2vh;
+  border: 2px dashed white;
 }
 
 .progress-bar-striped {
-  background-color: #0099ff;
+  background-color: #4cad20;
+}
+
+span#count-down-timer {
+  margin: 1.5vh auto 2vh;
+  color: #CDEF77;
+  font-size: 3rem;
+  font-weight: bold;
 }

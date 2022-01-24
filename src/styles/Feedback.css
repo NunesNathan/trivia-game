@@ -1,11 +1,23 @@
-.card {
+header.card > img.rounded-circle {
+  margin: 5.65vh 0;
+  align-self: center;
+}
+
+header > p.userName {
+  align-self: center;
+  margin-bottom: 0;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+main.feedback div.card {
   width: 50%;
-  margin: 5vh auto 0;
+  margin: 3vh auto 0;
   background-color: rgba(0, 0, 0, 0.5)
 }
 
 .text-message {
-  margin-top: 2vh;
+  margin-top: 3vh;
   margin-bottom: 1vh;
 }
 
@@ -21,3 +33,11 @@
   color: #E9EFCA;
 }
 
+main.feedback div.card {
+  padding-bottom: 3vh;
+}
+
+button:is(.btn-play-again, .btn-ranking) {
+  width: 40%;
+  margin: 0 auto 2vh !important;
+}

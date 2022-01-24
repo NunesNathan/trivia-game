@@ -22,13 +22,13 @@
   min-width: 21vw;
 }
 
-.img1 {
+.ranking-card-logo {
   margin-top: 4vh;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
 }
 
-.img2 {
+.ranking-card-picture {
   position: relative;
   display: block;
   margin-left: auto;
@@ -41,8 +41,9 @@
   margin-top: 10px;
 }
 
-.card:hover .img2 {
+.card:hover :is(.ranking-card-picture, .main-text p) {
   border-color: #CDEF77;
+  color: #CDEF77;
   transition: .7s;
 }
 
@@ -52,14 +53,13 @@
   color: #E9EFCA;
 }
 
-.main-text h2 {
-  text-transform: uppercase;
+.main-text p.ranking-name {
+  font-size: 1.5rem;
   font-weight: 900;
-  font-size: 20px;
   margin: 0 0 20px;
 }
 
-.main-text p {
+.main-text p.ranking-score {
   font-size: 16px;
   padding: 0 35px;
   margin-bottom: 0;

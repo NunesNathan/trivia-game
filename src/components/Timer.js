@@ -14,12 +14,11 @@ export default class Timer extends Component {
             aria-valuemax="100"
             style={{ width: "100%", color: 'black' }} />
         </div>
-        <h1
+        <span
           id="count-down-timer"
-          style={{ color: 'black' }}
         >
           { 30 }
-        </h1>
+        </span>
       </div>
     );
   }

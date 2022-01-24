@@ -19,8 +19,8 @@ export default class Feedback extends Component {
 
   render() {
     return (
-      <div>
-        <Header />
+      <main className="feedback">
+        <Header place="feedback" />
         <div className="card">
           <FeedbackMessage />
           <FeedbackInfo />
@@ -37,7 +37,7 @@ export default class Feedback extends Component {
             disabled={ false }
           />
         </div>
-      </div>
+      </main>
     );
   }
 }

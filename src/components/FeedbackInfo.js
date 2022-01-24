@@ -8,7 +8,7 @@ class FeedbackInfo extends Component {
     return (
       <div className="text-info">
           <p>{ `You got ${assertions} questions right!` }</p>
-          <p>{ `Totaling ${score} points` }</p>
+          <p>{ `Total score: ${score}!` }</p>
       </div>
     );
   }
