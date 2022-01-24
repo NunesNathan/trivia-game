@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import sound from '../assets/show.mp3';
 import PropType from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchAPIToken, makeScore } from '../redux/actions';
@@ -31,7 +32,9 @@ class GameScreen extends Component {
   }
 
   componentDidMount() {
+    const audio = new Audio(sound);
     this.getQuestions();
+    audio.play();
   }
 
   componentWillUnmount() {
@@ -102,22 +105,22 @@ class GameScreen extends Component {
     return (
       <div className="d-flex flex-wrap justify-content-evenly" id="options">
         <Button
-          text={decodeCharacter(correct)}
-          style={{ border: correctStyle }}
-          className={withHover}
-          disabled={disabledButton}
-          onClick={() => this.answerClicked(true)}
+          text={ decodeCharacter(correct) }
+          style={ { border: correctStyle } }
+          className={ withHover }
+          disabled={ disabledButton }
+          onClick={ () => this.answerClicked(true) }
         />
-        {incorrect.map((each, i) => (
+        { incorrect.map((each, i) => (
           <Button
-            key={decodeCharacter(each)}
-            text={decodeCharacter(each)}
-            style={{ border: incorrectStyle }}
-            className={withHover}
-            disabled={disabledButton}
-            onClick={() => this.answerClicked(false)}
+            key={ decodeCharacter(each) }
+            text={ decodeCharacter(each) }
+            style={ { border: incorrectStyle } }
+            className={ withHover }
+            disabled={ disabledButton }
+            onClick={ () => this.answerClicked(false) }
           />
-        ))}
+        )) }
       </div>);
   };
 
@@ -149,26 +152,26 @@ class GameScreen extends Component {
     const { actualQuestion, haveOptions, haveAnswer } = this.state;
     return (
       <main className="card">
-        {!haveOptions
+        { !haveOptions
           ? (<p className="display-6" >Carregando...</p>)
           : (
             <div className="d-flex flex-column">
-              <p className="category">{actualQuestion.category}</p>
+              <p className="category">{ actualQuestion.category }</p>
               <p className="lead">
-                {decodeCharacter(actualQuestion.question)}
+                { decodeCharacter(actualQuestion.question) }
               </p>
-              {this.renderOptions(actualQuestion)}
-              {haveAnswer
+              { this.renderOptions(actualQuestion) }
+              { haveAnswer
                 && (
                   <Button
                     text="Next"
                     className="btn-next"
-                    onClick={this.nextQuestion}
+                    onClick={ this.nextQuestion }
                   />
                 )}
               <Timer />
             </div>
-          )}
+          ) }
       </main>
     );
   }
