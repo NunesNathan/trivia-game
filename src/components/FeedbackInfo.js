@@ -6,19 +6,9 @@ class FeedbackInfo extends Component {
   render() {
     const { assertions, score } = this.props;
     return (
-      <div>
-        <p>
-          You got
-          <span>
-            { assertions }
-          </span>
-          questions right!
-        </p>
-        <p>
-          Totaling
-          <span>{ score }</span>
-          points
-        </p>
+      <div className="text-info">
+          <p>{ `You got ${assertions} questions right!` }</p>
+          <p>{ `Total score: ${score}!` }</p>
       </div>
     );
   }

@@ -9,10 +9,10 @@
 body {
   text-align: center;
   background: linear-gradient(#141e30, #243b55);
-  min-height: 98vh;
+  min-height: 97vh;
 }
 
-.btn-play, .btn-settings, .btn-play-again {
+.btn-play, .btn-settings, .btn-play-again, .btn-next, .btn-ranking {
   position: relative;
   display: inline-block;
   padding: 10px 20px;
@@ -28,9 +28,18 @@ body {
   margin: 1.2vh 1vw 0;
 }
 
-.btn-play:hover, .btn-settings:hover, .btn-play-again:hover, .btn-play:focus, .btn-settings:focus, .btn-play-again:focus {
+.btn-play:hover,
+.btn-settings:hover,
+.btn-play-again:hover, 
+.btn-next:hover, 
+.btn-ranking:hover,
+.btn-play:focus, 
+.btn-settings:focus, 
+.btn-play-again:focus,
+.btn-next:focus, 
+.btn-ranking:focus {
   background: #CDEF77;
-  color: rgb(76, 173, 32);
+  color: #4cad20;
   border-radius: 5px;
   outline: none;
   box-shadow: 0 0 5px #CDEF77,

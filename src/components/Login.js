@@ -63,7 +63,7 @@ class Login extends Component {
         <Input
           id="name"
           test="input-player-name"
-          label="Nome do Jogador"
+          label="Nickname"
           value={ name }
           type="text"
           changeValue={ this.changeValue }
@@ -71,7 +71,7 @@ class Login extends Component {
         <Input
           id="email"
           test="input-gravatar-email"
-          label="Email do Gravatar"
+          label="Gravatar Email"
           value={ email }
           type="email"
           changeValue={ this.changeValue }

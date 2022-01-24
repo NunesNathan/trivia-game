@@ -8,7 +8,7 @@ class FeedbackMessage extends Component {
   render() {
     const { assertions } = this.props;
     return (
-      <div>
+      <div className="text-message">
         {assertions < PARAM_ASSERTIONS
           ? <h1>Could be better...</h1>
           : <h1>Well Done!</h1>}
