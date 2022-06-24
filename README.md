@@ -2,15 +2,11 @@
 
 # Contexto
 
-Este projeto foi desenvolvido ao finalizar os  _Blocos 10 a 15 do curso da Trybe.  Este projeto foi realizado em **grupo** ! O objetivo era colocar em prática tudo o que aprendemos  sobre _React e Redux ⚛️_ e praticar a organização de um projeto em equipe com a metodologia **Agile Kanban** .
+Este projeto foi realizado em **grupo**, aplicando a metodologia **Agile Kanban**, com o objetivo de colocar em prática as ferramentas: _React e Redux ⚛️_.
 
-O objetivo era desenvolver um jogo de perguntas e respostas baseado no jogo Trivia, parecido um show do milhão americano, utilizando React e Redux.
+O objetivo era desenvolver um jogo de perguntas e respostas baseado no jogo Trivia. O app começa com uma tela onde o jogador insere seu nome e e-mail. Em seguida, o mesmo é redirecionada para o jogo onde deve escolher uma das respostas disponíveis para cada uma das perguntas. A resposta deve ser marcada antes do cronômetro chegar ao zero, caso contrário a resposta será considerada como errada.
 
-O app começa com uma tela onde a pessoa que joga coloca seu nome e seu e-mail. O e-mail será usado para buscar a foto associada no site Gravatar, se houver.
-
-Logo após, ela é redirecionada para o jogo onde deve escolher uma das respostas disponíveis para cada uma das perguntas. A resposta deve ser marcada antes de o contador de tempo chegar a zero, caso contrário a resposta deve ser considerada como errada.
-
-Cada acerto dá à pessoa que joga pontos que deverão ser computados num placar no header da aplicação. Após 5 perguntas respondidas, a pessoa que joga é redirecionada para uma tela de score, onde o texto mostrado vai depender do número de acertos. No final de cada jogo, a pessoa que joga pode acessar o ranking com as melhores pontuações.
+Cada pergunta respondida corretamente fará com que o jogador receba pontos. Estes pontos serão computados no header da aplicação. Após 5 perguntas respondidas, o jogador é redirecionado para uma tela de score indicando a sua pontuação. No final de cada jogo, o jogador também poderá acessar um ranking com as melhores pontuações.
 
 ### _[Clique aqui](http://trivia-game-flax.vercel.app/ "trivia-game-flax.vercel.app")  para visualizar o projeto_
 
@@ -74,9 +70,8 @@ npm install
      npm start
     
     ```
-## To-do 
+## Melhorias para este projeto:
 
-Melhoras para este projeto:
 - Realizar testes unitários
 - Melhorar responsividade
 - Alterar redirecionamento do botão "jogar novamente"
